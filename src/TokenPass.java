@@ -12,7 +12,7 @@ public class TokenPass
         {
             board[i] = (int) (Math.random() * 10) + 1;
         }
-        currPlayer = (int) (Math.random() * pCount);
+        currPlayer = (int) (Math.random() * (pCount - 1));
     }
     public void printBoard()
     {
@@ -33,11 +33,13 @@ public class TokenPass
                 winner = currPlayer;
             if(time == 0)
                 break;
+            if(i == pCount - 1)
+                i = -1;
         }
     }
     public void nextPlayer()
     {
-        if(currPlayer == pCount)
+        if(currPlayer == pCount - 1)
             currPlayer = 0;
         else
             currPlayer++;
