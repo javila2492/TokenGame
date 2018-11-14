@@ -31,8 +31,10 @@ public class TokenPass
             time--;
             if(board[currPlayer] == 0)
                 winner = currPlayer;
-            if(time == 0)
+            if(time == 0) {
+                System.out.println("Round Over");
                 break;
+            }
             if(i == pCount - 1)
                 i = -1;
         }
